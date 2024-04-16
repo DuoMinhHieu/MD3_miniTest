@@ -1,7 +1,7 @@
 create database minitestlan1;
 use minitestlan1;
 create table city(
-                     id int auto_increment primary key,
+                     id int primary key,
                      city_name varchar (100));
 insert into city values (1,'Ha Noi');
 insert into city(city_name) values ('Ho Chi Minh'),
@@ -10,15 +10,14 @@ insert into city(city_name) values ('Ho Chi Minh'),
                                    ('Bac Ninh');
 
 create table categoryTour(
-                             id int auto_increment primary key,
+                             id int primary key,
                              categoryCode varchar(255),
                              categoryName varchar(255));
 insert into categoryTour values (1,'001','Tron goi'),
                                 (2,'002','Tu chon');
 
 create table destination(
-                            id int auto_increment primary key,
-                            destinationName varchar(255),
+                            id int primary key,
                             desribes varchar(255),
                             cost int,
                             city_id int,
@@ -29,7 +28,7 @@ insert into destination values(1,'Pho di bo','A',100,1),
                               (4,'Lang quan ho','D',150,4),
                               (5,'Tu Son','E',200,5);
 create table clients (
-                         id int auto_increment primary key,
+                         id int primary key,
                          nameClient varchar(255),
                          idNumber varchar(255),
                          dateBirth date,
@@ -47,7 +46,7 @@ insert into clients(nameClient, idNumber, dateBirth, city_id) values ('Duong Min
                                                                      ('Phan Quyet Thang', '0123456780', '2003-2-1',2);
 select * from clients;
 create table tour(
-                     id int auto_increment primary key,
+                     id int primary key,
                      tourCode varchar(255),
                      category_id int,
                      destination_id int,
@@ -72,7 +71,7 @@ insert into tour(tourCode, category_id, destination_id, dateStart, dateEnd) valu
                                                                                    ('BD',1,5,'2024-3-1','2024-3-3');
 select * from tour;
 create table ordertour(
-                          id int auto_increment primary key,
+                          id int primary key,
                           tour_id int,
                           clients_id int,
                           status varchar(255),
